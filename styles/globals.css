@@ -1,3 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @variants responsive {
+    .line-separate::before{
+    content: "";
+    display: block;
+    width: 1px;
+    height: 10px;
+    background: #dcdcdc;
+    position: absolute;
+    left: 0;
+    top: calc(50% - 6px);
+    }
+
+    .lastSlide{
+      /* opacity: 1!important; */
+      transform: translateX(-100%);
+    }
+
+    .nextSlide{
+      /* opacity: 1!important; */
+      transform: translateX(100%);
+    }
+
+    .activeSlide{
+      opacity: 1!important;
+      transform: translateX(0);
+    }
+  }
+}
+
+
 html,
 body {
   padding: 0;
