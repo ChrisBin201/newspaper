@@ -27,7 +27,7 @@ export default function Body() {
                 <a className="px-2 text-sm font-bold " >Chảo lửa Trung Đông</a>
             </div>
             <Multimedia/>
-            <div className="grid grid-flow-col gap-4">
+            <div className="grid grid-flow-col gap-4 mt-3">
                 <CategoryLeft/>
                 <CategoryCenter/>
                 <CategoryRight/>

@@ -19,7 +19,7 @@ export default function Navbar(){
         )
     }
     return(
-        <nav>
+        <nav className="border-t-4 border-yellow-600 py-2.5 bg-gray-100 mb-4">
             <ul className={"flex text-xs font-semibold " +styles.container} >
                 <li className="pr-2.5">
                     <a className="hover:text-yellow-600" href="">

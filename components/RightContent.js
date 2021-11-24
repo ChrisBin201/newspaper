@@ -8,17 +8,17 @@ export default function RightContent(){
     return(
         <div style={{ width: "615px" }}>
                 <div style={{ width: "615px", height: "166px" }}
-                    className="bg-gray-100 p-3.5 border border-solid border-gray-200 ">
+                    className="bg-gray-100 p-3.5 border border-solid border-gray-200 mb-4 ">
                     <div></div>
                     <div></div>
                 </div>
-                <div>
-                    <div className="flex justify-between">
+                <div className="mb-3">
+                    <div className="flex justify-between mb-2.5">
                         <div>
-                            <Image src="/Body/logo-tv.png" width={122} height={30} />
+                            <Image src="/Body/logo-tv.png" width={122} height={30}  />
                         </div>
                         <div>
-                            <a class="ico-youtube-link" rel="nofollow" target="_blank"
+                            <a className="mr-2 text-sm" rel="nofollow" target="_blank"
                                 href="https://www.youtube.com/user/sakkura89">
                                 Theo dõi Quốc Tế TV trên
                             </a>
@@ -36,7 +36,9 @@ export default function RightContent(){
                                     frameborder="0" allowfullscreen="">
                                 </iframe>
                             </div>
-                            <div>Thủ tướng Chính phủ Phạm Minh Chính trả lời chất vấn trước Quốc hội</div>
+                            <div className="font-semibold text-base my-2">
+                                Thủ tướng Chính phủ Phạm Minh Chính trả lời chất vấn trước Quốc hội
+                            </div>
                         </div>
                         <div className="flex justify-between">
                             <CardQuocTe path="/Body/quoc-te-1.jpg"

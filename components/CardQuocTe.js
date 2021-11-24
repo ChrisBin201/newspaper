@@ -6,7 +6,7 @@ export default function CardQuocTe({path, content}) {
             <div>
                 <Image src={path} width={195} height={110} />
             </div>
-            <div>{content}</div>
+            <div className="text-sm text-gray-600" >{content}</div>
         </div>
 
     )

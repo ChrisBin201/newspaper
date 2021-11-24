@@ -6,9 +6,9 @@ export default function CategoryRight(){
 
     function Topic({content}){
         return(
-            <div style={{width: "300px"}}>
+            <div style={{width: "300px"}} className="mb-4" >
                 <div className="text-2xl border-b border-red-600 " >{content.header}</div>
-                <ul>
+                <ul className="mt-4" >
                     {content.body.map((item,index) =>(
                         <li>
                             <a href={item.url} ></a>

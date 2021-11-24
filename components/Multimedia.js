@@ -4,7 +4,7 @@ export default function Multimedia() {
 
     return (
         <div className="p-3.5 bg-gray-100 text-sm">
-            <div className="flex justify-between">
+            <div className="flex justify-between py-3">
                 <div>
                     <span className="text-2xl border-b border-red-600 ">Multimedia</span>
                     <a className="mx-2" href="https://baoquocte.vn/tin-anh">Ảnh</a>

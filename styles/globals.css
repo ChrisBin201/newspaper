@@ -29,6 +29,13 @@
       opacity: 1!important;
       transform: translateX(0);
     }
+
+    .line-clamp {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;  
+      overflow: hidden;
+    }
   }
 }
 

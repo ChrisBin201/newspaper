@@ -13,9 +13,9 @@ export default function CategoryLeft() {
 
     function Topic({ content }) {
         return (
-            <div>
+            <div className="mb-4">
                 <span className="text-2xl border-b border-red-600 ">{content.header}</span>
-                <ul className="list-square">
+                <ul className="list-square mt-4 ">
                     {content.body.map((item, index) => (
                         index === 0 ? (
                             <li style={{ height: "160px" }} class="flex bg-gray-100">
@@ -28,13 +28,13 @@ export default function CategoryLeft() {
                                     title={item.head}
                                 >
                                 </a>
-                                <div class="p-4 flex flex-col justify-between leading-normal overflow-ellipsis overflow-hidden ">
+                                <div class="p-4 flex flex-col justify-between leading-normal overflow-hidden">
                                     <div class="mb-8">
-                                        <a class="text-gray-900 font-bold text-base mb-2"
+                                        <a class="text-gray-900 font-bold text-base mb-2 line-clamp"
                                             href={item.url} >
                                             {item.head}
                                         </a>
-                                        <p class="text-gray-700 text-sm" style={{ WebkitLineClamp: "3" }}>
+                                        <p class="text-gray-700 text-sm line-clamp ">
                                             {item.desc}
                                         </p>
                                     </div>
@@ -42,7 +42,7 @@ export default function CategoryLeft() {
                             </li>
                         )
                         : (
-                            <li className="text-sm text-gray-600" 
+                            <li className="py-2 text-sm text-gray-600 border-b border-gray-300" 
                                 style={{marginLeft: "17px"}} >
                                 <a href={item.url} >
                                     {item.head}

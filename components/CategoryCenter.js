@@ -10,9 +10,9 @@ export default function CategoryCenter() {
 
     function Topic({ content }) {
         return (
-            <div>
+            <div className="mb-4" >
                 <span className="text-2xl border-b border-red-600 ">{content.header}</span>
-                <ul className="bg-gray-100" style={{width: "300px" }} >
+                <ul className="bg-gray-100 mt-4 " style={{width: "300px" }} >
                     {content.body.map((item, index) => (
                         index === 0 ? (
                             <li>
@@ -22,7 +22,7 @@ export default function CategoryCenter() {
                                     </a>
                                 </div>
                                 <div >
-                                    <a class="text-gray-900 font-bold text-base mb-2"
+                                    <a className="text-gray-900 font-bold text-base mb-2"
                                         href={item.url} >
                                         {item.head}
                                     </a>
