@@ -36,9 +36,20 @@ export default function Slider() {
                             class_name = "activeSlide";
                         if (i + 1 === index || (i === contentSlide.length - 1 && index === 0))
                             class_name = "lastSlide";
-
+                        
+                        let prev,active,next;
+                        if(index===0){ 
+                            prev=contentSlide.length - 1; active = index; next = index+1
+                        }
+                        else if(index===contentSlide.length - 1){
+                            prev=index-1; active = index; next = 0
+                        }
+                        else{
+                            prev=index-1; active = index; next = index+1
+                        }
                         return (
-                            <article className={"absolute w-full h-full transition-all duration-500 opacity-0 bg-gray-100 " + class_name} >
+                            (i===prev || i===active || i===next) &&
+                            <article key={i} className={"absolute w-full h-full transition-all duration-500 bg-gray-100 " + class_name} >
                                 <Image src={item.img} width={815} height={458} />
                                 <div className="bg-gray-100 h-full">
                                     <h2 className="text-2xl font-bold mb-2 px-3.5">{item.title}</h2>

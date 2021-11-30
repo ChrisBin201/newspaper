@@ -18,8 +18,8 @@ export default function CategoryLeft() {
                 <ul className="list-square mt-4 ">
                     {content.body.map((item, index) => (
                         index === 0 ? (
-                            <li style={{ height: "160px" }} class="flex bg-gray-100">
-                                <a class="flex-none bg-cover text-center overflow-hidden"
+                            <li key={index} style={{ height: "160px" }} className="flex bg-gray-100">
+                                <a className="flex-none bg-cover text-center overflow-hidden"
                                     style={{
                                         backgroundImage: `url('${item.img}')`,
                                         width: "285px", height: "160px"
@@ -28,13 +28,13 @@ export default function CategoryLeft() {
                                     title={item.head}
                                 >
                                 </a>
-                                <div class="p-4 flex flex-col justify-between leading-normal overflow-hidden">
-                                    <div class="mb-8">
-                                        <a class="text-gray-900 font-bold text-base mb-2 line-clamp"
+                                <div className="p-4 flex flex-col justify-between leading-normal overflow-hidden">
+                                    <div className="mb-8">
+                                        <a className="text-gray-900 font-bold text-base mb-2 line-clamp"
                                             href={item.url} >
                                             {item.head}
                                         </a>
-                                        <p class="text-gray-700 text-sm line-clamp ">
+                                        <p className="text-gray-700 text-sm line-clamp ">
                                             {item.desc}
                                         </p>
                                     </div>
@@ -42,7 +42,7 @@ export default function CategoryLeft() {
                             </li>
                         )
                         : (
-                            <li className="py-2 text-sm text-gray-600 border-b border-gray-300" 
+                            <li key={index} className="py-2 text-sm text-gray-600 border-b border-gray-300" 
                                 style={{marginLeft: "17px"}} >
                                 <a href={item.url} >
                                     {item.head}

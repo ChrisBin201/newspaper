@@ -21,17 +21,16 @@ export default function Coverage() {
                     </div>
                     <div className="text-sm">
                         <article className="pt-3">
-                            <a className="flex justify-between">
+                            <div className="flex justify-between">
                                 <div>
                                     <Image src="/Body/binh-luan.jpg" width={125} height={70} />
                                 </div>
-                                <h3 className="font-bold text-sm w-32">
                                     <a href="https://baoquocte.vn/tinh-hinh-syria-chap-nhan-thuc-te-164495.html"
+                                        className="font-bold text-sm w-32"
                                         title="Tình hình Syria: Chấp nhận thực tế">
                                         Tình hình Syria: Chấp nhận thực tế
                                     </a>
-                                </h3>
-                            </a>
+                            </div>
                         </article>
                         <article className="pt-2.5">
                             <a href="https://baoquocte.vn/goi-chi-tieu-1200-ty-usd-cua-my-de-diu-au-lo-164358.html"

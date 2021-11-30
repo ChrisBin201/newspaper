@@ -7,10 +7,10 @@ export default function CategoryRight(){
     function Topic({content}){
         return(
             <div style={{width: "300px"}} className="mb-4" >
-                <div className="text-2xl border-b border-red-600 " >{content.header}</div>
+                <span className="text-2xl border-b border-red-600 " >{content.header}</span>
                 <ul className="mt-4" >
                     {content.body.map((item,index) =>(
-                        <li>
+                        <li key={index} >
                             <a href={item.url} ></a>
                             <Image src={item.img} width={300} height={450} />
                         </li>

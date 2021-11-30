@@ -8,7 +8,7 @@ export default function News(){
             <ul className="h-full">
                 {news.map((item,index)=>{
                     return(
-                    <li className={`flex relative py-4 mx-4 
+                    <li key={index} className={`flex relative py-4 mx-4 
                                     ${index!==news.length-1? "border-b border-dashed border-gray-600":""}`}>
                         <div className="align-text-top font-serif font-thin 
                         text-4xl text-gray-300 float-left w-16 absolute ">

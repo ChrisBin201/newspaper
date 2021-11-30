@@ -13,7 +13,7 @@ export default function BannerSlider() {
     }
     useEffect(() => {
         let slider = setInterval(Increase, 5000);
-        console.log(index)
+        // console.log(index)
         return () => {
             clearInterval(slider)
         };
@@ -21,8 +21,8 @@ export default function BannerSlider() {
     return (
         <div className="relative">
             {imgArr.map((img, i) => {
-                console.log(index)
-                console.log(i)
+                // console.log(index)
+                // console.log(i)
                 return (
                     <div className={`absolute transition-all duration-300
                                     ${i===index? "opacity-100":"opacity-0"}` } 

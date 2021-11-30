@@ -8,7 +8,7 @@ export default function Navbar(){
         const [open,setOpen] = useState(false);
         // const topic = children[0]
         // const dropdown = children[1] 
-        console.log(children)
+        // console.log(children)
         return(
             <li className="px-2.5 relative line-separate z-50 " 
                 onMouseEnter={() => setOpen(true)} 

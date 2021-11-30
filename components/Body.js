@@ -12,19 +12,34 @@ export default function Body() {
             <Coverage />
             <MainContent />
             <div className="flex items-center p-4 bg-red-100 mb-4">
-                <a className="bg-no-repeat pl-8 mr-12 font-bold" 
-                style={{ backgroundImage: "url(/Body/ico-topic.png)" }} >
+                <a className="bg-no-repeat pl-8 mr-12 font-bold hover:text-blue-700" 
+                    href="https://baoquocte.vn/chu-de"
+                    style={{ backgroundImage: "url(/Body/ico-topic.png)" }} >
                     CHỦ ĐỀ
                 </a>
-                <a className="px-2 text-sm font-bold ">Khủng hoảng năng lượng</a>
+                <a className="px-2 text-sm font-bold hover:text-blue-700 "
+                    href="https://baoquocte.vn/chu-de/khung-hoang-nang-luong.topic" >
+                    Khủng hoảng năng lượng
+                </a>
                 <span className="font-semibold">/</span>
-                <a className="px-2 text-sm font-bold " >Biển Đông</a>
+                <a className="px-2 text-sm font-bold hover:text-blue-700 "
+                    href="https://baoquocte.vn/chu-de/bien-dong.topic" >
+                    Biển Đông
+                </a>
                 <span className="font-semibold">/</span>
-                <a className="px-2 text-sm font-bold " >Căng thẳng Nga-Ukraine</a>
+                <a className="px-2 text-sm font-bold hover:text-blue-700 "
+                    href="https://baoquocte.vn/chu-de/cang-thang-nga-ukraine.topic" >
+                    Căng thẳng Nga-Ukraine
+                </a>
                 <span className="font-semibold">/</span>
-                <a className="px-2 text-sm font-bold " >Ngoại giao vaccine</a>
+                <a className="px-2 text-sm font-bold hover:text-blue-700 " 
+                    href="https://baoquocte.vn/chu-de/ngoai-giao-vaccine.topic" >
+                    Ngoại giao vaccine
+                </a>
                 <span className="font-semibold">/</span>
-                <a className="px-2 text-sm font-bold " >Chảo lửa Trung Đông</a>
+                <a className="px-2 text-sm font-bold hover:text-blue-700 " href="" >
+                    Chảo lửa Trung Đông
+                </a>
             </div>
             <Multimedia/>
             <div className="grid grid-flow-col gap-4 mt-3">

@@ -15,13 +15,13 @@ export default function CategoryCenter() {
                 <ul className="bg-gray-100 mt-4 " style={{width: "300px" }} >
                     {content.body.map((item, index) => (
                         index === 0 ? (
-                            <li>
+                            <li key={index} >
                                 <div>
                                     <a href={item.url} title={item.head} >
                                         <Image src={item.img} width={300} height={169} />
                                     </a>
                                 </div>
-                                <div >
+                                <div className="pl-3 " >
                                     <a className="text-gray-900 font-bold text-base mb-2"
                                         href={item.url} >
                                         {item.head}
@@ -30,7 +30,7 @@ export default function CategoryCenter() {
                             </li>
                         )
                             : (
-                                <li className="text-sm text-gray-600 p-3"  >
+                                <li key={index} className="text-sm text-gray-600 p-3"  >
                                     <a href={item.url} >
                                         {item.head}
                                     </a>

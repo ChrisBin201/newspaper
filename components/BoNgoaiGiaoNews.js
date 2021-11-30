@@ -9,7 +9,7 @@ export default function BoNgoaiGiaoNews(){
                 {boNgoaiGiaoNews.map((item,index)=>{
                     return(
                         index===0?
-                        (<div>
+                        (<div key={index} >
                                 <Image src={item.img} width={300} height={169} />
                             <div className="text-gray-900 font-bold text-sm mb-2 mx-3" >
                                 {item.title}
@@ -18,7 +18,7 @@ export default function BoNgoaiGiaoNews(){
                     
                         :
                         (
-                            <div className="text-sm pb-2 mb-2 mx-3 border-b border-dashed border-gray-300" >
+                            <div key={index} className="text-sm pb-2 mb-2 mx-3 border-b border-dashed border-gray-300" >
                                 {item.title}
                             </div>
                         )
