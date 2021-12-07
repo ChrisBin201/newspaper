@@ -18,23 +18,25 @@ export default function CategoryLeft() {
                 <ul className="list-square mt-4 ">
                     {content.body.map((item, index) => (
                         index === 0 ? (
-                            <li key={index} style={{ height: "160px" }} className="flex bg-gray-100">
-                                <a className="flex-none bg-cover text-center overflow-hidden"
+                            <li key={index}  className="flex bg-gray-100 h-40">
+                                <a className="flex-none bg-cover text-center overflow-hidden w-56 md:w-72"
                                     style={{
                                         backgroundImage: `url('${item.img}')`,
-                                        width: "285px", height: "160px"
+                                        // width: "285px"
+                                        // backgroundSize:"contain"
+
                                     }}
                                     href={item.url}
                                     title={item.head}
                                 >
                                 </a>
-                                <div className="p-4 flex flex-col justify-between leading-normal overflow-hidden">
+                                <div className="p-4 flex flex-col justify-center md:justify-between leading-normal overflow-hidden">
                                     <div className="mb-8">
-                                        <a className="text-gray-900 font-bold text-base mb-2 line-clamp"
+                                        <a className="text-gray-900 font-bold text-base mb-2 line-clamp-3"
                                             href={item.url} >
                                             {item.head}
                                         </a>
-                                        <p className="text-gray-700 text-sm line-clamp ">
+                                        <p className="hidden md:block text-gray-700 text-sm line-clamp-3 ">
                                             {item.desc}
                                         </p>
                                     </div>
@@ -56,7 +58,7 @@ export default function CategoryLeft() {
     }
 
     return (
-        <div>
+        <div className="col-span-3" >
             <Topic content={thoiSu} />
             <Topic content={bienDong} />
             <Topic content = {theGioi}/>

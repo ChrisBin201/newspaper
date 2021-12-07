@@ -31,7 +31,7 @@ export default function QuocTeNews(){
                             Thủ tướng Chính phủ Phạm Minh Chính trả lời chất vấn trước Quốc hội
                         </div>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex flex-col lg:flex-row justify-between">
                         <CardQuocTe path="/Body/quoc-te-1.jpg"
                             content="Chính sách của EU về Biển Đông" />
                         <CardQuocTe path="/Body/quoc-te-2.jpg"

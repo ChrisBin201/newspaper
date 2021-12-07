@@ -4,15 +4,16 @@
 
 @layer utilities {
   @variants responsive {
-    .line-separate::before{
+    .line-separate::after{
     content: "";
     display: block;
     width: 1px;
-    height: 10px;
+    height: 100%;
     background: #dcdcdc;
     position: absolute;
-    left: 0;
-    top: calc(50% - 6px);
+    right: 0;
+    /* top: calc(50% - 6px); */
+    top:0;
     }
 
     .lastSlide{
@@ -30,9 +31,15 @@
       transform: translateX(0);
     }
 
-    .line-clamp {
+    .line-clamp-3 {
       display: -webkit-box;
       -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;  
+      overflow: hidden;
+    }
+    .line-clamp-4 {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
       -webkit-box-orient: vertical;  
       overflow: hidden;
     }
@@ -44,8 +51,12 @@ html,
 body {
   padding: 0;
   margin: 0;
+  /* display: inline-block; */
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+body{
+  /* min-width: 1200px; */
 }
 
 a {
@@ -55,4 +66,41 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
 }

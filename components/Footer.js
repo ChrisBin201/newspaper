@@ -3,8 +3,8 @@ import Image from 'next/image'
 export default function Footer() {
 
     return (
-        <footer className="bg-gray-100">
-            <div className="bg-gray-600 py-3">
+        <footer className="sm:bg-gray-100 bg-blue-800 text-white sm:text-black">
+            <div className="bg-gray-600 py-3 hidden sm:block">
                 <div className={"flex justify-between text-white text-sm font-bold " + styles.container} >
                     <a style={{ backgroundImage: "url('/ico-home-white.png')" }}
                         className="bg-no-repeat pl-6"
@@ -39,7 +39,7 @@ export default function Footer() {
                         <p>© Copyright 2021 "Báo Thế giới &amp; Việt Nam", All rights reserved.</p>
                         <p>® Ghi rõ nguồn "Báo Thế giới &amp; Việt Nam" khi bạn phát hành lại thông tin từ website này.</p>
                     </div>
-                    <div>
+                    <div className="hidden md:block" >
                         <Image src="/Header/logo.png" width={247} height={90} />
                     </div>
                 </div>

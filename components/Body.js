@@ -11,8 +11,8 @@ export default function Body() {
         <div className={styles.container}>
             <Coverage />
             <MainContent />
-            <div className="flex items-center p-4 bg-red-100 mb-4">
-                <a className="bg-no-repeat pl-8 mr-12 font-bold hover:text-blue-700" 
+            <div className="hidden md:flex items-center text-center p-4 bg-red-100 mb-4">
+                <a className="bg-no-repeat pl-8 md:w-32 lg:w-auto lg:mr-12 font-bold hover:text-blue-700" 
                     href="https://baoquocte.vn/chu-de"
                     style={{ backgroundImage: "url(/Body/ico-topic.png)" }} >
                     CHỦ ĐỀ
@@ -42,7 +42,7 @@ export default function Body() {
                 </a>
             </div>
             <Multimedia/>
-            <div className="grid grid-flow-col gap-4 mt-3">
+            <div className="md:grid md:grid-cols-3 lg:grid-cols-7 gap-4 mt-3">
                 <CategoryLeft/>
                 <CategoryCenter/>
                 <CategoryRight/>

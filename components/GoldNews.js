@@ -40,7 +40,7 @@ export default function GoldNews() {
         index === 0 ? setIndex(lastIndex) : setIndex(index - 1);
     }
     return (
-        <div className="mb-2" >
+        <div className="mt-3.5 lg:mt-0 mb-2" >
             <div className="flex justify-between">
                 <span className="text-2xl border-b border-red-600 mb-3.5">Giá Vàng</span>
                 <div className="flex" >

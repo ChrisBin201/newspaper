@@ -19,18 +19,20 @@ export default function BannerSlider() {
         };
     }, [index])
     return (
-        <div className="relative">
-            {imgArr.map((img, i) => {
-                // console.log(index)
-                // console.log(i)
-                return (
-                    <div className={`absolute transition-all duration-300
-                                    ${i===index? "opacity-100":"opacity-0"}` } 
-                                    key={i}>
-                        <Image src={img} width={300} height={90} />
-                    </div>
-                )
-            })}
-        </div>
+        // <div className="">
+            <div className="hidden md:block relative mt-16" >
+                {imgArr.map((img, i) => {
+                    // console.log(index)
+                    // console.log(i)
+                    return (
+                        <div className={`absolute transition-all duration-300 -bottom-1.5 
+                                        ${i===index? "opacity-100":"opacity-0"}` }
+                                        key={i}>
+                            <Image src={img} width={300} height={90} />
+                        </div>
+                    )
+                })}
+            </div>
+        // </div>
     )
 }

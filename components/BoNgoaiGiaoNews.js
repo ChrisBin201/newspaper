@@ -3,15 +3,17 @@ import Image from "next/image"
 export default function BoNgoaiGiaoNews(){
 
     return(
-        <div style={{width:"300px"}} className="mt-3">
+        <div 
+        // style={{width:"300px"}} 
+        className="mt-3">
             <span className="text-2xl border-b border-red-600 ">Tin Bộ Ngoại giao</span>
             <div className="mt-3 bg-gray-100 pb-2 " >
                 {boNgoaiGiaoNews.map((item,index)=>{
                     return(
                         index===0?
-                        (<div key={index} >
+                        (<div key={index} className=" flex md:block pb-3 md:pb-0" >
                                 <Image src={item.img} width={300} height={169} />
-                            <div className="text-gray-900 font-bold text-sm mb-2 mx-3" >
+                            <div className="text-gray-900 font-bold text-sm mb-2 mx-3 pt-2 md:pt-0" >
                                 {item.title}
                             </div>
                         </div>)

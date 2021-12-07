@@ -6,13 +6,13 @@ export default function CategoryRight(){
 
     function Topic({content}){
         return(
-            <div style={{width: "300px"}} className="mb-4" >
+            <div className="mb-4" >
                 <span className="text-2xl border-b border-red-600 " >{content.header}</span>
                 <ul className="mt-4" >
                     {content.body.map((item,index) =>(
                         <li key={index} >
                             <a href={item.url} ></a>
-                            <Image src={item.img} width={300} height={450} />
+                            <Image src={item.img} width={310} height={450} />
                         </li>
                     ))}
                 </ul>
@@ -21,7 +21,7 @@ export default function CategoryRight(){
     }
 
     return(
-        <div>
+        <div className="hidden md:block col-span-1 lg:col-span-2" >
            <Topic content={baoIn} />
            <Topic content={anPhamdb} />
         </div>

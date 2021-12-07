@@ -1,6 +1,64 @@
-
 .container {
-  padding: 0 3.2rem;
+  padding-left: 5px;
+  padding-right: 5px;
   max-width: 1222px;
   margin: auto;
+} 
+
+
+
+@media screen and (min-width: 1024px){
+  .container {
+    padding-left: 3.2rem;
+    padding-right: 3.2rem;
+    max-width: 1222px;
+    margin: auto;
+  } 
+}
+
+.menuBtn:checked ~ .navMobile {
+  transform: translateX(0);
+}
+.menuBtn:checked ~ .navMobile {
+  display: block;
+}
+.menu_overlay{
+
+}
+.navMobile{
+
+}
+
+.slider{
+  height: 540px;
+}
+.imgSlider{
+  height: 400px;
+}
+.btnSilder{
+  bottom: 160px;
+}
+
+@media (min-width: 768px){
+  .slider{
+    height: 540px;
+  }
+  .imgSlider{
+    height: 400px;
+  }
+  .btnSilder{
+    bottom: 160px;
+  }
+}
+
+@media (min-width: 1024px){
+.slider{
+  height: 606px;
+}
+.imgSlider{
+  height: 458px;
+}
+.btnSilder{
+  bottom: 160px;
+}
 }

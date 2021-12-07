@@ -10,7 +10,7 @@ export default function Navbar(){
         // const dropdown = children[1] 
         // console.log(children)
         return(
-            <li className="px-2.5 relative line-separate z-50 " 
+            <li className="px-2.5 relative line-separate  z-50 " 
                 onMouseEnter={() => setOpen(true)} 
                 onMouseLeave={() =>setOpen(false)} >
                 <a className="hover:text-yellow-600" href={url}>{topic}</a>
@@ -19,9 +19,9 @@ export default function Navbar(){
         )
     }
     return(
-        <nav className="border-t-4 border-yellow-600 py-2.5 bg-gray-100 mb-4">
+        <nav className="hidden lg:block border-t-4 border-yellow-600 py-2.5 bg-gray-100 mb-4">
             <ul className={"flex text-xs font-semibold " +styles.container} >
-                <li className="pr-2.5">
+                <li className="list-item pr-2.5 text-center relative line-separate">
                     <a className="hover:text-yellow-600" href="">
                         <Image src="/Header/ico-home.png" width={15} height={16} />
                     </a>
@@ -30,7 +30,7 @@ export default function Navbar(){
                     <DropdownMenu 
                     menuItems={['Phân tích chuyện thời sư','Suy ngẫm','Việt Nam và ASEAN']} />
                 </NavItem>
-                <li className="px-2.5 relative line-separate">
+                <li className="px-2.5 relative line-separate text-center">
                     <a className="hover:text-yellow-600" href="https://baoquocte.vn/bien-dong-247" >BIỂN ĐÔNG 24/7</a>
                 </li>
                 <NavItem topic="THẾ GIỚI" url="https://baoquocte.vn/the-gioi" >
@@ -47,7 +47,7 @@ export default function Navbar(){
                     menuItems={['Kinh tế thế giới','Hội nhập - Phát triển',
                             'Bất động sản','Tài chính - Chứng khoán','Thương hiệu - Sản phẩm']}/>
                 </NavItem>
-                <li className="px-2.5 relative line-separate">
+                <li className="px-2.5 relative line-separate text-center">
                     <a className="hover:text-yellow-600" href="https://baoquocte.vn/nguoi-viet" >NGƯỜI VIỆT</a>
                 </li>
                 <NavItem topic="VĂN HÓA" url="https://baoquocte.vn/van-hoa" >
@@ -58,20 +58,20 @@ export default function Navbar(){
                     <DropdownMenu 
                     menuItems={['Giáo dục','Đời sống','Y tế','Sổ xố hôm nay']} />
                 </NavItem>
-                <li className="px-2.5 relative line-separate">
+                <li className="px-2.5 relative line-separate text-center">
                     <a className="hover:text-yellow-600" href="https://baoquocte.vn/xa-hoi/giao-duc" >GIÁO DỤC</a>
                 </li>
                 <NavItem topic="GIẢI TRÍ" url="https://baoquocte.vn/giai-tri" >
                     <DropdownMenu 
                     menuItems={['Hậu trường','Chuyện bốn phương','Xem - Nghe']} />
                 </NavItem>
-                <li className="px-2.5 relative line-separate">
+                <li className="px-2.5 relative line-separate text-center">
                     <a className="hover:text-yellow-600" href="https://baoquocte.vn/the-thao" >THỂ THAO</a>
                 </li>
-                <li className="px-2.5 relative line-separate">
+                <li className="px-2.5 relative line-separate text-center">
                     <a className="hover:text-yellow-600" href="https://baoquocte.vn/khoa-hoc-cong-nghe" >KHOA HỌC - CÔNG NGHỆ</a>
                 </li>
-                <li className="px-2.5 relative line-separate">
+                <li className="px-2.5 relative text-center">
                     <a className="hover:text-yellow-600" href="https://baoquocte.vn/o-to" >Ô TÔ+</a>
                 </li>
             </ul>

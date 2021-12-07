@@ -12,17 +12,17 @@ export default function CategoryCenter() {
         return (
             <div className="mb-4" >
                 <span className="text-2xl border-b border-red-600 ">{content.header}</span>
-                <ul className="bg-gray-100 mt-4 " style={{width: "300px" }} >
+                <ul className="bg-gray-100 mt-4 "  >
                     {content.body.map((item, index) => (
                         index === 0 ? (
-                            <li key={index} >
+                            <li key={index} className="flex lg:block" >
                                 <div>
                                     <a href={item.url} title={item.head} >
-                                        <Image src={item.img} width={300} height={169} />
+                                        <Image src={item.img} width={310} height={169} />
                                     </a>
                                 </div>
                                 <div className="pl-3 " >
-                                    <a className="text-gray-900 font-bold text-base mb-2"
+                                    <a className="w-11/12 lg:w-auto mt-2 lg:mt-0 text-gray-900 font-bold text-sm md:text-base mb-2 line-clamp-3 lg:block"
                                         href={item.url} >
                                         {item.head}
                                     </a>
@@ -43,7 +43,7 @@ export default function CategoryCenter() {
     }
 
     return (
-        <div>
+        <div className="col-span-2" >
             <Topic content={analyzeThoiSu} />
             <Topic content ={foreignNews} />
             <Topic content ={vanHoa} />

@@ -6,7 +6,7 @@ import RightContent from "./RightContent"
 export default function MainContent() {
 
     return (
-        <div className="grid grid-flow-col gap-4 pt-4">
+        <div className="md:grid grid-cols-12 gap-4 pt-4">
             <LeftContent/>
             <RightContent/>
         </div>
