@@ -24,7 +24,6 @@ export default function Slider() {
             clearInterval(slider)
         };
     }, [index])
-    console.log(clients);
     return (
         <div 
         className={`hidden md:block col-span-3 ${styles.slider}`}>
