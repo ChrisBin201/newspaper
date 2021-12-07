@@ -18,13 +18,13 @@ export default function Slider() {
         index === 0 ? setIndex(lastIndex) : setIndex(index - 1);
     }
 
-    // useEffect(() => {
-    //     let slider = setInterval(Increase, 5000);
-    //     return () => {
-    //         clearInterval(slider)
-    //     };
-    // }, [index])
-    // console.log(clients);
+    useEffect(() => {
+        let slider = setInterval(Increase, 5000);
+        return () => {
+            clearInterval(slider)
+        };
+    }, [index])
+    console.log(clients);
     return (
         <div 
         className={`hidden md:block col-span-3 ${styles.slider}`}>
