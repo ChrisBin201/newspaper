@@ -28,7 +28,7 @@ export default function SliderMobile() {
         <div className="block md:hidden relative w-full h-64 sm:max-h-80" >
             <Swiper slidesPerView={1} spaceBetween={30} loop={true}>
                 {content.map((item, index) => (
-                <SwiperSlide >
+                <SwiperSlide key={index} >
                     <article key={index}
                         className="relative w-full h-full bg-cover bg-center  
                                                     overflow-hidden   transition duration-300 

@@ -25,8 +25,8 @@ export default function Multimedia() {
                     return (
                         index === 0 ?
                             (
-                                <>
-                                    <article key={index} className="hidden lg:block relative w-full h-64 bg-cover bg-center group  
+                                <React.Fragment key={index}>
+                                    <article className="hidden lg:block relative w-full h-64 bg-cover bg-center group  
                                                 overflow-hidden shadow-lg hover:shadow-lg  transition duration-300 
                                                 ease-in-out mb-4 "
                                         style={{ backgroundImage: `url(${item.img})`, width: "540px" }}>
@@ -40,7 +40,7 @@ export default function Multimedia() {
                                             </h3>
                                         </div>
                                     </article>
-                                    <article key={index} className="lg:hidden mb-3" >
+                                    <article className="lg:hidden mb-3" >
                                         <a href="" className="flex pr-4" >
                                             <div>
                                                 <Image src={item.img} width={264} height={149} />
@@ -50,7 +50,7 @@ export default function Multimedia() {
                                             </div>
                                         </a>
                                     </article>
-                                </>
+                                </React.Fragment>
                             )
                             : (
                                 <article key={index} className="lg:w-64 mb-3">

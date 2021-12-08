@@ -10,8 +10,8 @@ export default function ImageNews() {
                 return (
                     // <div >
                     i === 0 ? (
-                        <>
-                            <article key={i} className="hidden lg:block relative w-full h-64 bg-cover bg-center group  
+                        <React.Fragment key={i} >
+                            <article className="hidden lg:block relative w-full h-64 bg-cover bg-center group  
                                                 overflow-hidden shadow-lg hover:shadow-2xl  transition duration-300 
                                                 ease-in-out mb-4"
                                 style={{ backgroundImage: `url(${element.img})` }}>
@@ -28,7 +28,7 @@ export default function ImageNews() {
                                     </h3>
                                 </div>
                             </article>
-                            <article key={i} className="flex lg:hidden lg:w-36 mb-1 lg:mb-0 ">
+                            <article className="flex lg:hidden lg:w-36 mb-1 lg:mb-0 ">
                                 <div className=" lg:w-auto">
                                     <Image src={element.img} width={146} height={82} />
                                 </div>
@@ -42,7 +42,7 @@ export default function ImageNews() {
                                     </span>
                                 </div>
                             </article>
-                        </>
+                        </React.Fragment>
                     )
                         :
                         (<article key={i} className="flex lg:block lg:w-36 mb-1 lg:mb-0 ">

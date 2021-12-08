@@ -60,9 +60,9 @@ export default function Header() {
                 <div className={"flex justify-between py-2 items-center " + styles.container}>
                     {/* Menu Icon for NavMobile */}
                     <div className="lg:hidden">
-                        <div class="flex max-h-screen h-full w-full relative">
-                            <div class="ml-1 mr-3">
-                                <label for="menuBtn">
+                        <div className="flex max-h-screen h-full w-full relative">
+                            <div className="ml-1 mr-3">
+                                <label htmlFor="menuBtn">
                                     <MenuIcon className="text-blue-900" />
                                 </label>
                             </div>

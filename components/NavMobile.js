@@ -4,6 +4,7 @@ import React, { useRef, useState } from 'react';
 import styles from '../styles/Home.module.css'
 import Image from 'next/image';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import DropdownMobile from './DropdownMobile';
 export default function NavMobile() {
 
 
@@ -31,25 +32,25 @@ export default function NavMobile() {
   }
 
 
-  function DropdownMobile({ menuItems }) {
+  // function DropdownMobile({ menuItems }) {
 
-    function DropdownItem(props) {
-      return (
-        <a key={props.index} href=""
-          className="py-2 px-4 hover:text-yellow-600 text-sm bg-gray-100" >
-          {props.children}
-        </a>
-      )
-    }
+  //   function DropdownItem(props) {
+  //     return (
+  //       <a key={props.indexE} href=""
+  //         className="py-2 px-4 hover:text-yellow-600 text-sm bg-gray-100" >
+  //         {props.children}
+  //       </a>
+  //     )
+  //   }
 
-    return (
-      <React.Fragment>
-        {menuItems.map((item, i) => (
-          <DropdownItem index={i} >{item}</DropdownItem>
-        ))}
-      </React.Fragment>
-    )
-  }
+  //   return (
+  //     <React.Fragment>
+  //       {menuItems.map((item, i) => (
+  //         <DropdownItem indexE={i} >{item}</DropdownItem>
+  //       ))}
+  //     </React.Fragment>
+  //   )
+  // }
   return (
       <div className="w-full h-full  lg:hidden">
         <input type="checkbox" name="" id="menuBtn" className={"hidden " + styles.menuBtn} />
@@ -59,7 +60,7 @@ export default function NavMobile() {
             <a className="block cursor-pointer mt-2">
               <Image src="/Header/logo.png" width={247} height={90} ></Image>
             </a>
-            <label for="menuBtn" className="top-2 right-3 absolute transition-all" >
+            <label htmlFor="menuBtn" className="top-2 right-3 absolute transition-all" >
               <CloseIcon />
             </label>
           </div>
