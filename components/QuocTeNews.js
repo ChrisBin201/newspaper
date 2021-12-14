@@ -19,17 +19,17 @@ export default function QuocTeNews(){
                     </div>
                 </div>
                 <div>
-                    <div>
-                        <div>
+                    <div className="mb-2" >
+                        <div className="mb-2" >
                             <iframe id="youtubeplayer" video-id="1200"
                                 width="100%" height="315"
                                 src="https://www.youtube.com/embed/l3HREX0aYK8?rel=0&amp;version=3&amp;enablejsapi=1"
                                 frameBorder="0" allowFullScreen="">
                             </iframe>
                         </div>
-                        <div className="font-semibold text-base my-2">
+                        <a href="" className="hover:text-blue-700 font-semibold text-base my-2">
                             Thủ tướng Chính phủ Phạm Minh Chính trả lời chất vấn trước Quốc hội
-                        </div>
+                        </a>
                     </div>
                     <div className="flex flex-col lg:flex-row justify-between">
                         <CardQuocTe path="/Body/quoc-te-1.jpg"

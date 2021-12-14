@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 import MenuIcon from '@mui/icons-material/Menu';
 import NavMobile from "./NavMobile";
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-export default function Header() {
+export default function Header({setActiveNavMobile}) {
     const dayArr = ["Chủ nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"]
     const dateObj = new Date();
     const month = dateObj.getMonth() + 1;
@@ -15,6 +15,8 @@ export default function Header() {
 
     const time = `${dateObj.getHours()}:${String(dateObj.getMinutes()).padStart(2, '0')}`;
     const dayOfWeek = dayArr[dateObj.getDay()];
+
+    
     return (
         <React.Fragment>
             <header>
@@ -62,7 +64,7 @@ export default function Header() {
                     <div className="lg:hidden">
                         <div className="flex max-h-screen h-full w-full relative">
                             <div className="ml-1 mr-3">
-                                <label htmlFor="menuBtn">
+                                <label onClick={()=>setActiveNavMobile(true)} htmlFor="menuBtn">
                                     <MenuIcon className="text-blue-900" />
                                 </label>
                             </div>
@@ -128,35 +130,35 @@ export default function Header() {
             </div>
             <Navbar />
             <div className="md:hidden whitespace-nowrap">
-            <div className="flex w-full text-center py-1 items-center bg-blue-800 text-white mb-4">
-                <a className="px-2 font-bold" 
-                    href="https://baoquocte.vn/chu-de"
+                <div className="flex w-full text-center py-1 items-center bg-blue-800 text-white mb-4">
+                    <a className="px-2 font-bold"
+                        href="https://baoquocte.vn/chu-de"
                     // style={{ backgroundImage: "url(/Body/ico-topic.png)" }} 
                     >
-                    CHỦ ĐỀ
-                </a>
-                <div className="flex w-full overflow-x-scroll">
-                    <a className="px-2 text-sm font-bold "
-                        href="https://baoquocte.vn/chu-de/khung-hoang-nang-luong.topic" >
-                        Khủng hoảng năng lượng
+                        CHỦ ĐỀ
                     </a>
-                    <a className="px-2 text-sm font-bold "
-                        href="https://baoquocte.vn/chu-de/bien-dong.topic" >
-                        Biển Đông
-                    </a>
-                    <a className="px-2 text-sm font-bold "
-                        href="https://baoquocte.vn/chu-de/cang-thang-nga-ukraine.topic" >
-                        Căng thẳng Nga-Ukraine
-                    </a>
-                    <a className="px-2 text-sm font-bold "
-                        href="https://baoquocte.vn/chu-de/ngoai-giao-vaccine.topic" >
-                        Ngoại giao vaccine
-                    </a>
-                    <a className="px-2 text-sm font-bold " href="" >
-                        Chảo lửa Trung Đông
-                    </a>
+                    <div className="flex w-full overflow-x-scroll">
+                        <a className="px-2 text-sm font-bold "
+                            href="https://baoquocte.vn/chu-de/khung-hoang-nang-luong.topic" >
+                            Khủng hoảng năng lượng
+                        </a>
+                        <a className="px-2 text-sm font-bold "
+                            href="https://baoquocte.vn/chu-de/bien-dong.topic" >
+                            Biển Đông
+                        </a>
+                        <a className="px-2 text-sm font-bold "
+                            href="https://baoquocte.vn/chu-de/cang-thang-nga-ukraine.topic" >
+                            Căng thẳng Nga-Ukraine
+                        </a>
+                        <a className="px-2 text-sm font-bold "
+                            href="https://baoquocte.vn/chu-de/ngoai-giao-vaccine.topic" >
+                            Ngoại giao vaccine
+                        </a>
+                        <a className="px-2 text-sm font-bold " href="" >
+                            Chảo lửa Trung Đông
+                        </a>
+                    </div>
                 </div>
-            </div>
             </div>
         </React.Fragment>
     )

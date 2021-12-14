@@ -7,6 +7,7 @@
 
 
 
+
 @media screen and (min-width: 1024px){
   .container {
     padding-left: 3.2rem;
@@ -16,18 +17,23 @@
   } 
 }
 
-.menuBtn:checked ~ .navMobile {
+/* .menuBtn:checked ~ .navMobile {
   transform: translateX(0);
 }
-.menuBtn:checked ~ .navMobile {
+.menuBtn:checked ~ .menu_overlay {
   display: block;
 }
+
+.menuBtn:checked ~ body{
+  overflow: hidden;
+}
+
 .menu_overlay{
 
 }
 .navMobile{
 
-}
+} */
 
 .slider{
   height: 540px;

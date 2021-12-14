@@ -5,7 +5,7 @@ export default function DropdownMobile({ menuItems }) {
     function DropdownItem(props) {
         return (
             <a href=""
-                className="py-2 px-4 hover:text-yellow-600 text-sm bg-gray-100" >
+                className="block py-2 px-4 hover:text-yellow-600 text-sm bg-gray-100" >
                 {props.children}
             </a>
         )

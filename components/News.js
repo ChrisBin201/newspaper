@@ -14,7 +14,7 @@ export default function News(){
                         text-4xl text-gray-300 float-left w-16 absolute top-1/5  ">
                             {index+1}
                         </div>
-                        <div className="w-5/6 text-sm pl-12 ">{item.content}</div>
+                        <a href="" className="hover:text-blue-700 w-5/6 text-sm pl-12 ">{item.content}</a>
                     </li>
                     )
                 })}

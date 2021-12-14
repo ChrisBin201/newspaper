@@ -7,7 +7,7 @@ export default function Multimedia() {
         <div className="p-3.5 bg-gray-100 text-sm">
             <div className="flex justify-between py-3">
                 <div >
-                    <span className="text-2xl border-b border-red-600 mr-2">Multimedia</span>
+                    <a href="" className="hover:text-blue-700 text-2xl border-b border-red-600 mr-2">Multimedia</a>
                     <a className=" hidden md:inline mx-2 hover:text-blue-700" href="https://baoquocte.vn/tin-anh">Ảnh</a>
                     <a className="hidden md:inline mx-2 hover:text-blue-700" href="https://baoquocte.vn/infographic">Infographic</a>
                     <a className="hidden md:inline mx-2 hover:text-blue-700" href="https://baoquocte.vn/tin-video">Video</a>
@@ -58,7 +58,7 @@ export default function Multimedia() {
                                         <div>
                                             <Image src={item.img} width={264} height={149} />
                                         </div>
-                                        <div className="  ml-3 mt-2 w-3/5 text-xs font-bold">
+                                        <div className="hover:text-blue-700  ml-3 mt-2 w-3/5 text-xs font-bold">
                                             {item.title}
                                         </div>
                                     </a>

@@ -14,7 +14,7 @@ export default function CategoryLeft() {
     function Topic({ content }) {
         return (
             <div className="mb-4">
-                <span className="text-2xl border-b border-red-600 ">{content.header}</span>
+                <a href="" className="hover:text-blue-700 text-2xl border-b border-red-600 ">{content.header}</a>
                 <ul className="list-square mt-4 ">
                     {content.body.map((item, index) => (
                         index === 0 ? (
@@ -32,7 +32,7 @@ export default function CategoryLeft() {
                                 </a>
                                 <div className="p-4 flex flex-col justify-center md:justify-between leading-normal overflow-hidden">
                                     <div className="mb-8">
-                                        <a className="text-gray-900 font-bold text-base mb-2 line-clamp-3"
+                                        <a className="hover:text-blue-700 text-gray-900 font-bold text-base mb-2 line-clamp-3"
                                             href={item.url} >
                                             {item.head}
                                         </a>
@@ -44,9 +44,9 @@ export default function CategoryLeft() {
                             </li>
                         )
                         : (
-                            <li key={index} className="py-2 text-sm text-gray-600 border-b border-gray-300" 
+                            <li key={index} className="hover:text-blue-700 py-2 text-sm text-gray-600 border-b border-gray-300" 
                                 style={{marginLeft: "17px"}} >
-                                <a href={item.url} >
+                                <a href={item.url} className="block" >
                                     {item.head}
                                 </a>
                             </li>

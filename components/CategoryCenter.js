@@ -11,7 +11,7 @@ export default function CategoryCenter() {
     function Topic({ content }) {
         return (
             <div className="mb-4" >
-                <span className="text-2xl border-b border-red-600 ">{content.header}</span>
+                <a href="" className="hover:text-blue-700 text-2xl border-b border-red-600 ">{content.header}</a>
                 <ul className="bg-gray-100 mt-4 "  >
                     {content.body.map((item, index) => (
                         index === 0 ? (
@@ -21,8 +21,8 @@ export default function CategoryCenter() {
                                         <Image src={item.img} width={310} height={169} />
                                     </a>
                                 </div>
-                                <div className="pl-3 " >
-                                    <a className="w-11/12 lg:w-auto mt-2 lg:mt-0 text-gray-900 font-bold text-sm md:text-base mb-2 line-clamp-3 lg:block"
+                                <div className="hover:text-blue-700 pl-3 " >
+                                    <a className="hover:text-blue-700 w-11/12 lg:w-auto mt-2 lg:mt-0 text-gray-900 font-bold text-sm md:text-base mb-2 line-clamp-3 lg:block"
                                         href={item.url} >
                                         {item.head}
                                     </a>
@@ -30,7 +30,7 @@ export default function CategoryCenter() {
                             </li>
                         )
                             : (
-                                <li key={index} className="text-sm text-gray-600 p-3"  >
+                                <li key={index} className="hover:text-blue-700 text-sm text-gray-600 p-3"  >
                                     <a href={item.url} >
                                         {item.head}
                                     </a>

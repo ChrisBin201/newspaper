@@ -46,18 +46,18 @@ export default function ImageNews() {
                     )
                         :
                         (<article key={i} className="flex lg:block lg:w-36 mb-1 lg:mb-0 ">
-                            <div className=" lg:w-auto">
+                            <a href="" className=" lg:w-auto">
                                 <Image src={element.img} width={146} height={82} />
-                            </div>
-                            <div
-                                className=" pl-1 lg:pl-0 line-clamp-3 h-12 lg:h-auto lg:block w-4/5 lg:w-auto text-xs font-bold"
+                            </a>
+                            <a href=""
+                                className=" hover:text-blue-700 pl-1 lg:pl-0 line-clamp-3 h-12 lg:h-auto lg:block w-4/5 lg:w-auto text-xs font-bold"
 
                             >
                                 {element.title}
                                 <span>
                                     <Image src="/Body/img-images.png" width={15} height={12} />
                                 </span>
-                            </div>
+                            </a>
                         </article>)
 
                     // </div>
