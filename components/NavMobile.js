@@ -101,7 +101,7 @@ export default function NavMobile( {setActiveNavMobile, active} ) {
         </div>
         
         {/* overlays for mobile nav */}
-        {/* <div className={`lg:hidden fixed inset-0 h-screen w-screen hidden opacity-70 bg-black z-40 menu_overlay `} >
+        {/* <div className={`lg:hidden fixed inset-0 h-screen w-screen opacity-70 bg-black z-40 menu_overlay `} >
         </div> */}
         <nav className="flex py-2.5 px-5 text-xs items-center justify-between fixed bottom-0 left-0 z-40 right-0 w-full bg-gray-100">
             <a href="#" className="flex flex-col items-center">

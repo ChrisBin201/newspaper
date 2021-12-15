@@ -9,18 +9,35 @@ import styles from '../styles/Home.module.css'
 import "swiper/css/bundle";
 // import "./styles.css";
 export default function Home() {
-  const [activeNavMobile,setActiveNavMobile] = useState(false)
+  const [activeNavMobile, setActiveNavMobile] = useState(false)
+  const [_document, set_document] = React.useState(null)
+
+  React.useEffect(() => {
+    set_document(document)
+    console.log(document)
+  }, [])
+  if(_document){ 
+    let body = _document.body;
+    if(activeNavMobile)
+      body.style.overflow="hidden"
+    else
+      body.style.overflow="auto"
+  }
   return (
     <React.Fragment>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div className={activeNavMobile? "fixed left-0 right-0":""}>
-        <NavMobile active={activeNavMobile} setActiveNavMobile={setActiveNavMobile} />
+      <div className={` ${activeNavMobile ? "overflow-hidden" : ""}`}>
+        {/* overlays for mobile nav */}
+        {/* <div className={`lg:hidden fixed inset-0 h-screen w-screen hidden opacity-70 bg-black z-40 menu_overlay `} >
+        </div> */}
         <Header setActiveNavMobile={setActiveNavMobile} />
         <Body />
         <Footer />
+        <NavMobile active={activeNavMobile} setActiveNavMobile={setActiveNavMobile} />
+
       </div>
- </React.Fragment> 
+    </React.Fragment>
   )
 }

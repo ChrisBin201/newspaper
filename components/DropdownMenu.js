@@ -13,7 +13,7 @@ export default function DropdownMenu({menuItems}){
         <div className="absolute whitespace-nowrap flex flex-col -left-0.5">
             <div className="bg-transparent w-5 h-1.5"></div>
             {menuItems.map((item,i) =>(
-                <DropdownItem index={i} >{item}</DropdownItem>
+                <DropdownItem key={i} index={i} >{item}</DropdownItem>
             ))}
         </div>
         // <div className={styles.dropdownMenu}>
