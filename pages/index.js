@@ -8,36 +8,54 @@ import NavMobile from '../components/NavMobile'
 import styles from '../styles/Home.module.css'
 import "swiper/css/bundle";
 // import "./styles.css";
+import Link from 'next/link'
 export default function Home() {
-  const [activeNavMobile, setActiveNavMobile] = useState(false)
-  const [_document, set_document] = React.useState(null)
-
-  React.useEffect(() => {
-    set_document(document)
-    console.log(document)
-  }, [])
-  if(_document){ 
-    let body = _document.body;
-    if(activeNavMobile)
-      body.style.overflow="hidden"
-    else
-      body.style.overflow="auto"
-  }
+  
   return (
     <React.Fragment>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
-      <div className={` ${activeNavMobile ? "overflow-hidden" : ""}`}>
-        {/* overlays for mobile nav */}
-        {/* <div className={`lg:hidden fixed inset-0 h-screen w-screen hidden opacity-70 bg-black z-40 menu_overlay `} >
-        </div> */}
-        <Header setActiveNavMobile={setActiveNavMobile} />
+        <div className="md:hidden whitespace-nowrap">
+                <div className="flex w-full text-center py-1 items-center bg-blue-800 text-white mb-4">
+                    <Link href="/topic/chu-de"  >
+                        <a className="px-2 font-bold"
+                        // style={{ backgroundImage: "url(/Body/ico-topic.png)" }}
+                        >
+                            CHỦ ĐỀ
+                        </a>
+                    </Link>
+                    <div className="flex w-full overflow-x-scroll">
+                        <Link href="/topic/khung-hoang-nang-luong" >
+                            <a className="px-2 text-sm font-bold "
+                            >
+                                Khủng hoảng năng lượng
+                            </a>
+                        </Link>
+                        <Link href="/topic/bien-dong" >
+                            <a className="px-2 text-sm font-bold "
+                                href="https://baoquocte.vn/chu-de/bien-dong.topic" >
+                                Biển Đông
+                            </a>
+                        </Link>
+                        <Link href="/topic/cang-thang-nga-ukraine"  >
+                            <a className="px-2 text-sm font-bold "
+                                href="https://baoquocte.vn/chu-de/cang-thang-nga-ukraine.topic" >
+                                Căng thẳng Nga-Ukraine
+                            </a>
+                        </Link>
+                        <Link href="/topic/ngoai-giao-vaccine" >
+                            <a className="px-2 text-sm font-bold "
+                                href="https://baoquocte.vn/chu-de/ngoai-giao-vaccine.topic" >
+                                Ngoại giao vaccine
+                            </a>
+                        </Link>
+                        <Link href="/topic/chao-lua-trung-dong" >
+                            <a className="px-2 text-sm font-bold " href="" >
+                                Chảo lửa Trung Đông
+                            </a>
+                        </Link>
+                    </div>
+                </div>
+            </div>
         <Body />
-        <Footer />
-        <NavMobile active={activeNavMobile} setActiveNavMobile={setActiveNavMobile} />
-
-      </div>
     </React.Fragment>
   )
 }

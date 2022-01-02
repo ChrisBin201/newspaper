@@ -5,7 +5,8 @@ import Navbar from "./Navbar";
 import MenuIcon from '@mui/icons-material/Menu';
 import NavMobile from "./NavMobile";
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-export default function Header({setActiveNavMobile}) {
+import Link from 'next/link'
+export default function Header({ setActiveNavMobile }) {
     const dayArr = ["Chủ nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"]
     const dateObj = new Date();
     const month = dateObj.getMonth() + 1;
@@ -16,7 +17,7 @@ export default function Header({setActiveNavMobile}) {
     const time = `${dateObj.getHours()}:${String(dateObj.getMinutes()).padStart(2, '0')}`;
     const dayOfWeek = dayArr[dateObj.getDay()];
 
-    
+
     return (
         <React.Fragment>
             <header>
@@ -48,9 +49,9 @@ export default function Header({setActiveNavMobile}) {
                         </div>
                         <div>
                             <form className="flex mt-3 lg:mt-0 border border-solid border-gray-300" id="frmSearch" name="frmSearch">
-                                <input className="md:w-5/6 lg:w-auto" type="text" name="q" placeholder="Nhập từ khóa tìm kiếm" />
+                                <input className="md:w-5/6 lg:w-auto pl-2 text-sm" type="text" name="q" placeholder="Nhập từ khóa tìm kiếm" />
                                 <button className="px-1" type="submit" name="submit" value="">
-                                    <span style={{ position: "relative", top: "3px" }}>
+                                    <span className="relative top-1" >
                                         <Image src="/Header/ico-search.png" width={18} height={19} />
                                     </span>
                                 </button>
@@ -64,7 +65,7 @@ export default function Header({setActiveNavMobile}) {
                     <div className="lg:hidden">
                         <div className="flex max-h-screen h-full w-full relative">
                             <div className="ml-1 mr-3">
-                                <label onClick={()=>setActiveNavMobile(true)} htmlFor="menuBtn">
+                                <label onClick={() => setActiveNavMobile(true)} htmlFor="menuBtn">
                                     <MenuIcon className="text-blue-900" />
                                 </label>
                             </div>
@@ -79,14 +80,16 @@ export default function Header({setActiveNavMobile}) {
                         <LocalPhoneIcon />
                     </div>
                     <div className="hidden lg:flex flex-col text-blue-600 font-bold text-sm">
-                        <a className="my-3.5 cursor-pointer">
-                            <div className="float-right">
-                                <span className="mr-1">
-                                    <Image src="/Header/ico-24h.png" width={15} height={15} ></Image>
-                                </span>
-                                <span>Tin 24h</span>
-                            </div>
-                        </a>
+                        <Link href="/topic/tin-24h" >
+                            <a className="my-3.5 cursor-pointer">
+                                <div className="float-right">
+                                    <span className="mr-1">
+                                        <Image src="/Header/ico-24h.png" width={15} height={15} ></Image>
+                                    </span>
+                                    <span>Tin 24h</span>
+                                </div>
+                            </a>
+                        </Link>
                         <a className="my-3.5 cursor-pointer ">
                             <div className="float-right">
                                 <span className="mr-1">
@@ -100,7 +103,9 @@ export default function Header({setActiveNavMobile}) {
             </header>
             <div className={"pb-4 pt-2 lg:py-0 hidden sm:flex justify-between " + styles.container}>
                 <div className="hidden md:flex flex-col lg:block mr-10 text-xs font-semibold text-blue-800">
-                    <a className="pb-2 pl-2 lg:pl-0 lg:py-0 pr-2 cursor-pointer hover:text-yellow-600">TRANG CHỦ</a>
+                    <Link href="/" >
+                        <a className="pb-2 pl-2 lg:pl-0 lg:py-0 pr-2 cursor-pointer hover:text-yellow-600">TRANG CHỦ</a>
+                    </Link>
                     <span className="hidden lg:inline">|</span>
                     <a className="pb-2 px-2 lg:py-0 cursor-pointer hover:text-yellow-600">BỘ NGOẠI GIAO</a>
                     <span className="hidden lg:inline" >|</span>
@@ -129,37 +134,6 @@ export default function Header({setActiveNavMobile}) {
                 </div>
             </div>
             <Navbar />
-            <div className="md:hidden whitespace-nowrap">
-                <div className="flex w-full text-center py-1 items-center bg-blue-800 text-white mb-4">
-                    <a className="px-2 font-bold"
-                        href="https://baoquocte.vn/chu-de"
-                    // style={{ backgroundImage: "url(/Body/ico-topic.png)" }} 
-                    >
-                        CHỦ ĐỀ
-                    </a>
-                    <div className="flex w-full overflow-x-scroll">
-                        <a className="px-2 text-sm font-bold "
-                            href="https://baoquocte.vn/chu-de/khung-hoang-nang-luong.topic" >
-                            Khủng hoảng năng lượng
-                        </a>
-                        <a className="px-2 text-sm font-bold "
-                            href="https://baoquocte.vn/chu-de/bien-dong.topic" >
-                            Biển Đông
-                        </a>
-                        <a className="px-2 text-sm font-bold "
-                            href="https://baoquocte.vn/chu-de/cang-thang-nga-ukraine.topic" >
-                            Căng thẳng Nga-Ukraine
-                        </a>
-                        <a className="px-2 text-sm font-bold "
-                            href="https://baoquocte.vn/chu-de/ngoai-giao-vaccine.topic" >
-                            Ngoại giao vaccine
-                        </a>
-                        <a className="px-2 text-sm font-bold " href="" >
-                            Chảo lửa Trung Đông
-                        </a>
-                    </div>
-                </div>
-            </div>
         </React.Fragment>
     )
 }

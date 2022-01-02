@@ -1,13 +1,15 @@
 import React from "react"
-
-export default function DropdownMobile({ menuItems }) {
+import Link from "next/link"
+export default function DropdownMobile({ menuItems, activeNav }) {
 
     function DropdownItem(props) {
         return (
-            <a href=""
-                className="block py-2 px-4 hover:text-yellow-600 text-sm bg-gray-100" >
-                {props.children}
-            </a>
+            <Link href={`/topic/${props.children.toString().replace("/","")}`} >
+                <a  onClick={()=> activeNav(false)}
+                    className="block py-2 px-4 hover:text-yellow-600 text-sm bg-gray-300" >
+                    {props.children}
+                </a>
+            </Link>
         )
     }
 

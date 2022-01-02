@@ -56,7 +56,7 @@ export default function GoldNews() {
             </div>
             <div
                 style={{ height: "220px" }}
-                className="flex relative overflow-x-hidden ">
+                className="flex relative overflow-hidden ">
                 {listGold.map((golds, i) => {
 
                     let class_name = "nextSlide";
@@ -78,7 +78,7 @@ export default function GoldNews() {
 
                     return (
                         (i===prev || i===active || i===next) &&
-                        <div key={i} className={`absolute transition-all duration-300  ${class_name}`}>
+                        <div key={i} className={`absolute transition-all duration-300 h-56 overflow-y-scroll  ${class_name}`}>
                             <table className="w-full table-fixed border-collapse ">
                                 <thead>
                                     <tr className="bg-blue-900 text-sm" >

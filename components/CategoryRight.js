@@ -4,7 +4,7 @@ import { baoIn } from "../Data/BaoIn"
 
 export default function CategoryRight(){
 
-    function Topic({content}){
+    function TopicImage({content}){
         return(
             <div className="mb-4" >
                 <span className="text-2xl border-b border-red-600 " >{content.header}</span>
@@ -22,8 +22,8 @@ export default function CategoryRight(){
 
     return(
         <div className="hidden md:block col-span-1 lg:col-span-2" >
-           <Topic content={baoIn} />
-           <Topic content={anPhamdb} />
+           <TopicImage content={baoIn} />
+           <TopicImage content={anPhamdb} />
         </div>
     )
 }
