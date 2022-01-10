@@ -1,16 +1,19 @@
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
+import Link from 'next/link'
 export default function Footer() {
 
     return (
         <footer className="sm:bg-gray-100 bg-blue-800 text-white sm:text-black">
             <div className="bg-gray-600 py-3 hidden sm:block">
                 <div className={"flex justify-between text-white text-sm font-bold " + styles.container} >
-                    <a style={{ backgroundImage: "url('/ico-home-white.png')" }}
-                        className="bg-no-repeat pl-6"
-                        href="" >
-                        Trang chủ
-                    </a>
+                    <Link href="/" > 
+                        <a style={{ backgroundImage: "url('/ico-home-white.png')" }}
+                            className="bg-no-repeat pl-6"
+                         >
+                            Trang chủ
+                        </a>
+                    </Link>
                     <div className="divide-x-2" >
                         <a className="px-2"
                             href="https://mail.google.com/mail/u/0/?view=cm&su=Báo Thế giới và Việt Nam&to=baoquocte2016@gmail.com&body=https://baoquocte.vn/&fs=1&tf=1" >

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
 import styles from '../styles/Home.module.css'
 import Navbar from "./Navbar";
@@ -6,6 +6,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import NavMobile from "./NavMobile";
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import Link from 'next/link'
+import { NewsContext } from "../Context/NewsContext";
 export default function Header({ setActiveNavMobile }) {
     const dayArr = ["Chủ nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"]
     const dateObj = new Date();
@@ -17,6 +18,7 @@ export default function Header({ setActiveNavMobile }) {
     const time = `${dateObj.getHours()}:${String(dateObj.getMinutes()).padStart(2, '0')}`;
     const dayOfWeek = dayArr[dateObj.getDay()];
 
+    const { topicState, setTopicState } = useContext(NewsContext)
 
     return (
         <React.Fragment>
@@ -49,7 +51,7 @@ export default function Header({ setActiveNavMobile }) {
                         </div>
                         <div>
                             <form className="flex mt-3 lg:mt-0 border border-solid border-gray-300" id="frmSearch" name="frmSearch">
-                                <input className="md:w-5/6 lg:w-auto pl-2 text-sm" type="text" name="q" placeholder="Nhập từ khóa tìm kiếm" />
+                                <input className="md:w-5/6 lg:w-auto pl-2 text-sm outline-none" type="text" name="q" placeholder="Nhập từ khóa tìm kiếm" />
                                 <button className="px-1" type="submit" name="submit" value="">
                                     <span className="relative top-1" >
                                         <Image src="/Header/ico-search.png" width={18} height={19} />
@@ -73,15 +75,17 @@ export default function Header({ setActiveNavMobile }) {
                         </div>
                     </div>
 
-                    <a className="w-28 sm:w-auto mr-12">
-                        <Image src="/Header/logo.png" width={247} height={90} ></Image>
-                    </a>
+                    <Link href="/" >
+                        <a className="w-28 sm:w-auto mr-12">
+                            <Image src="/Header/logo.png" width={247} height={90} ></Image>
+                        </a>
+                    </Link>
                     <div className="lg:hidden mr-3">
                         <LocalPhoneIcon />
                     </div>
                     <div className="hidden lg:flex flex-col text-blue-600 font-bold text-sm">
                         <Link href="/topic/tin-24h" >
-                            <a className="my-3.5 cursor-pointer">
+                            <a className="my-3.5 cursor-pointer" onClick={() =>setTopicState("Tin 24h")} >
                                 <div className="float-right">
                                     <span className="mr-1">
                                         <Image src="/Header/ico-24h.png" width={15} height={15} ></Image>
@@ -90,14 +94,16 @@ export default function Header({ setActiveNavMobile }) {
                                 </div>
                             </a>
                         </Link>
-                        <a className="my-3.5 cursor-pointer ">
-                            <div className="float-right">
-                                <span className="mr-1">
-                                    <Image src="/Header/ico-events.png" width={25} height={7}></Image>
-                                </span>
-                                <span>Danh sách chủ đề</span>
-                            </div>
-                        </a>
+                        <Link href="/topic/chu-de"  >
+                            <a className="my-3.5 cursor-pointer " onClick={() =>setTopicState("Chủ đề")}>
+                                <div className="float-right">
+                                    <span className="mr-1">
+                                        <Image src="/Header/ico-events.png" width={25} height={7}></Image>
+                                    </span>
+                                    <span>Danh sách chủ đề</span>
+                                </div>
+                            </a>
+                        </Link>
                     </div>
                 </div>
             </header>
@@ -119,13 +125,19 @@ export default function Header({ setActiveNavMobile }) {
                         allow="encrypted-media"
                         src="https://www.facebook.com/plugins/like.php?action=like&amp;app_id=277749645924281&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df1b3be7aeb9a79%26domain%3Dbaoquocte.vn%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fbaoquocte.vn%252Ff1a2b509e74992%26relation%3Dparent.parent&amp;container_width=349&amp;href=https%3A%2F%2Fwww.facebook.com%2Fbaoquocte&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;size=small&amp;width=" >
                     </iframe>
-                    <a className="ml-5 mr-3 cursor-pointer">
-                        <Image src="/Header/ico-infographic-link.png" width={120} height={26} objectFit="contain"></Image>
-                    </a>
-                    <a style={{ position: "relative", top: "-1px", cursor: "pointer" }}>
-                        <Image src="/Header/ico-emagazine-link.png" width={110} height={26} objectFit="contain" ></Image>
-                    </a>
-                    <a className="hidden lg:block ml-3 cursor-pointer hover:text-blue-800">
+                    <Link href="/topic/infographic" >
+                        <a  className="ml-5 mr-3 cursor-pointer" 
+                            onClick={()=>setTopicState("Infographic")} >
+                            <Image src="/Header/ico-infographic-link.png" width={120} height={26} objectFit="contain"></Image>
+                        </a>
+                    </Link>
+                    <Link href="/topic/emagazine" >
+                        <a  style={{ position: "relative", top: "-1px", cursor: "pointer" }}
+                            onClick={()=>setTopicState("Emagazine")} >
+                            <Image src="/Header/ico-emagazine-link.png" width={110} height={26} objectFit="contain" ></Image>
+                        </a>
+                    </Link>
+                    <a className="hidden lg:block ml-3 cursor-pointer hover:text-blue-800"  >
                         <span className="pr-1">
                             <Image src="/Header/ico-english.png" width={19} height={11} objectFit="contain" ></Image>
                         </span>

@@ -12,6 +12,7 @@ export default function Navbar() {
         const [open, setOpen] = useState(false);
         // const topic = children[0]
         // const dropdown = children[1] 
+        // children.props.topic = {topic};
         // console.log(children)
         return (
             <li className="px-2.5  relative line-separate text-center  z-50 "
@@ -38,7 +39,8 @@ export default function Navbar() {
                 </li>
                 <NavItem topic="THỜI SỰ" url="thoi-su" >
                     <DropdownMenu
-                        menuItems={['Phân tích chuyện thời sư', 'Suy ngẫm', 'Việt Nam và ASEAN']} />
+                        menuItems={['Phân tích chuyện thời sư', 'Suy ngẫm', 'Việt Nam và ASEAN']}
+                        topic="THỜI SỰ" />
                 </NavItem>
                 <li className="px-2.5 relative line-separate text-center">
                     <Link href="/topic/bien-dong-247" >
@@ -47,17 +49,20 @@ export default function Navbar() {
                 </li>
                 <NavItem topic="THẾ GIỚI" url="the-gioi" >
                     <DropdownMenu
-                        menuItems={['Toàn cảnh', 'Tiêu điểm', 'Bình luận', 'Hồ sơ', 'Đọc báo nước ngoài']} />
+                        menuItems={['Toàn cảnh', 'Tiêu điểm', 'Bình luận', 'Hồ sơ', 'Đọc báo nước ngoài']}
+                        topic="THẾ GIỚI" />
                 </NavItem>
                 <NavItem topic="NGOẠI GIAO" url="ngoai-giao" >
                     <DropdownMenu
                         menuItems={['Tin Bộ Ngoại giao', 'Bảo hộ công dân',
-                            'Thường thức Ngoại giao', 'Chuyện ngoại giao']} />
+                            'Thường thức Ngoại giao', 'Chuyện ngoại giao']}
+                        topic="NGOẠI GIAO" />
                 </NavItem>
                 <NavItem topic="KINH TẾ" url="kinh-te" >
                     <DropdownMenu
                         menuItems={['Kinh tế thế giới', 'Hội nhập - Phát triển',
-                            'Bất động sản', 'Tài chính - Chứng khoán', 'Thương hiệu - Sản phẩm']} />
+                            'Bất động sản', 'Tài chính - Chứng khoán', 'Thương hiệu - Sản phẩm']}
+                        topic="KINH TẾ" />
                 </NavItem>
                 <li className="px-2.5 relative line-separate text-center">
                     <Link href="/topic/nguoi-viet" >
@@ -66,11 +71,13 @@ export default function Navbar() {
                 </li>
                 <NavItem topic="VĂN HÓA" url="van-hoa" >
                     <DropdownMenu
-                        menuItems={['Du lịch', 'Sổ tay văn hóa', 'Góc sách']} />
+                        menuItems={['Du lịch', 'Sổ tay văn hóa', 'Góc sách']}
+                        topic="VĂN HÓA" />
                 </NavItem>
                 <NavItem topic="XÃ HỘI" url="xa-hoi" >
                     <DropdownMenu
-                        menuItems={['Giáo dục', 'Đời sống', 'Y tế', 'Sổ xố hôm nay']} />
+                        menuItems={['Giáo dục', 'Đời sống', 'Y tế', 'Sổ xố hôm nay']}
+                        topic="XÃ HỘI" />
                 </NavItem>
                 <li className="px-2.5 relative line-separate text-center">
                     <Link href="/topic/giao-duc" >
@@ -79,7 +86,8 @@ export default function Navbar() {
                 </li>
                 <NavItem topic="GIẢI TRÍ" url="giai-tri" >
                     <DropdownMenu
-                        menuItems={['Hậu trường', 'Chuyện bốn phương', 'Xem - Nghe']} />
+                        menuItems={['Hậu trường', 'Chuyện bốn phương', 'Xem - Nghe']}
+                        topic="GIẢI TRÍ" />
                 </NavItem>
                 <li  className="px-2.5 relative line-separate text-center">
                     <Link href="/topic/the-thao" >

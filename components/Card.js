@@ -4,13 +4,13 @@ import Image from "next/image"
 import Link from "next/link"
 export default function Card({ id, img, imgSize, title, content, styleLayout, timer }) {
     let widthContent, widthImage;
-    if(styleLayout.includes("flex-col")){
-        widthImage="w-4/12 sm:w-auto"
+    if (styleLayout.includes("flex-col")) {
+        widthImage = "w-4/12 sm:w-auto"
         widthContent = "w-8/12 sm:w-full";
     }
     else {
         widthContent = "w-8/12";
-        widthImage="w-4/12";
+        widthImage = "w-4/12";
     }
     console.log(styleLayout)
     return (
@@ -32,14 +32,15 @@ export default function Card({ id, img, imgSize, title, content, styleLayout, ti
                             </a>
                         </Link>
                         {timer &&
-                            <span className="text-xs text-gray-400 flex gap-1" >
-                                <span style={{ marginRight: "3px", verticalAlign: "-3px" }}>
-                                        <Image src="/Header/ico-clock.png" width={15} height={15} ></Image>
-                                    </span>
+                            <span className="text-xs text-gray-400 flex  gap-1" >
+                                <span className="mt-[1px]" >
+                                    <Image src="/Header/ico-clock.png" width={15} height={15} ></Image>
+                                </span>
                                 <span>{timer.time}</span>
-                                <span>|</span>
+                                <span className="leading-tight" >|</span>
                                 <span>{timer.date}</span>
-                            </span>}
+                            </span>
+                        }
                         <div className="hidden md:block" >
                             <p className=" text-gray-700 text-sm line-clamp-3 ">
                                 {content}

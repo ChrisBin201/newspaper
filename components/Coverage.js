@@ -4,7 +4,12 @@ import BannerSlider from "./BannerSlider";
 import SliderMobile from "./SliderMobile";
 import Link from "next/link";
 import { content } from "../Data/sliderContent";
+import { NewsContext } from "../Context/NewsContext";
+import { useContext } from "react";
 export default function Coverage() {
+
+    const { topicState, setTopicState } = useContext(NewsContext)
+
     return (
         <div className=" pb-2 md:pb-8 border-b border-gray-200">
             <div className="md:grid grid-cols-4 gap-3.5" >
@@ -12,7 +17,8 @@ export default function Coverage() {
                 <SliderMobile content={content} />
                 <div className="h-full flex flex-col justify-between bg-gray-300 md:bg-transparent">
                     <Link href="/topic/bo-truong-bo-ngoai-giao-bui-thanh-son" >
-                        <a className="m-auto md:m-0 flex">
+                        <a  className="m-auto md:m-0 flex" 
+                            onClick={()=>setTopicState("CHỦ ĐỀ / Bộ trưởng Bộ Ngoại giao Bùi Thanh Sơn")} >
                             <Image src="/Body/2728_icon-BT-Son-4.jpg" width={300} height={250} />
                         </a>
                     </Link>
@@ -20,7 +26,8 @@ export default function Coverage() {
                         <div>
                             <h2>
                                 <Link href="/topic/binh-luan" >
-                                    <a className="border-red-600 border-b font-bold hover:text-blue-700 " >
+                                    <a  className="border-red-600 border-b font-bold hover:text-blue-700 "
+                                        onClick={()=>setTopicState("CHỦ ĐỀ / Bình luận")} >
                                         BÌNH LUẬN
                                     </a>
                                 </Link>

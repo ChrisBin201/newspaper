@@ -1,13 +1,17 @@
 import CardQuocTe from "./CardQuocTe"
 import Image from "next/image"
 import Link from "next/link"
+import { NewsContext } from "../Context/NewsContext"
+import { useContext } from "react"
 export default function QuocTeNews() {
+
+    const { topicState, setTopicState } = useContext(NewsContext)
 
     return (
         <div className="mb-3">
-            <div className="flex justify-between mb-2.5">
+            <div className="flex justify-between mb-2.5 items-center">
                 <Link href="/topic/quoc-te-news" >
-                    <a>
+                    <a onClick={() =>setTopicState("CHỦ ĐỀ / Quốc tế TV")} >
                         <Image src="/Body/logo-tv.png" width={122} height={30} />
                     </a>
                 </Link>

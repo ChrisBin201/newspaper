@@ -1,11 +1,18 @@
 import { news } from "../Data/news"
 import Link from "next/link"
+import { NewsContext } from "../Context/NewsContext"
+import { useContext } from "react"
 export default function News() {
+
+    const { topicState, setTopicState } = useContext(NewsContext)
 
     return (
         <div className="bg-gray-100 p-2">
             <Link href="/topic/news" >
-                <a className=" hover:text-blue-700 text-red-600 text-3xl">Tin mới</a>
+                <a  className=" hover:text-blue-700 text-red-600 text-3xl" 
+                    onClick={()=>setTopicState("CHỦ ĐỀ / Tin mới")} >
+                    Tin mới
+                </a>
             </Link>
             <ul className="h-full">
                 {news.map((item, index) => {

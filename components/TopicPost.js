@@ -1,10 +1,16 @@
 import Link from "next/link"
 import Image from "next/image"
+import { NewsContext } from "../Context/NewsContext";
+import { useContext } from "react";
 export default function TopicPost({ content }) {
+
+    const {topicState, setTopicState} = useContext(NewsContext);
+
     return (
         <div className="mb-4">
             <Link href={`/topic/${content.header.replace("/", "")}`} >
-                <a className="hover:text-blue-700 uppercase text-lg font-semibold border-b border-red-600 ">
+                <a className="hover:text-blue-700 uppercase text-lg font-semibold border-b border-red-600 "
+                    onClick={()=>setTopicState(content.header.toUpperCase())}>
                     {content.header}
                 </a>
             </Link>

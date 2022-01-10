@@ -1,6 +1,6 @@
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import styles from '../styles/Home.module.css'
 import Image from 'next/image';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -10,8 +10,10 @@ import HomeIcon from '@mui/icons-material/Home';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SearchIcon from '@mui/icons-material/Search';
 import Link from 'next/link';
+import { NewsContext } from '../Context/NewsContext';
 export default function NavMobile({ setActiveNavMobile, active }) {
 
+  const { topicState, setTopicState } = useContext(NewsContext)
 
   function NavItem({ children, topic, url }) {
     const [open, setOpen] = useState(false);
@@ -22,7 +24,8 @@ export default function NavMobile({ setActiveNavMobile, active }) {
       <li className=" line-separate z-50 border-b border-gray-300 ">
         <div className="px-2.5 py-2 flex justify-between" >
           <Link href={`/topic/${url}`}  >
-            <a className="hover:text-yellow-600 w-full" onClick={() => setActiveNavMobile(false)} >
+            <a className="hover:text-yellow-600 w-full" 
+            onClick={() => {setActiveNavMobile(false); setTopicState(topic)}} >
               {topic}
             </a>
           </Link>
@@ -68,7 +71,8 @@ export default function NavMobile({ setActiveNavMobile, active }) {
             <NavItem topic="THỜI SỰ" url="thoi-su" >
               <DropdownMobile
                 menuItems={['Phân tích chuyện thời sư', 'Suy ngẫm', 'Việt Nam và ASEAN']}
-                activeNav={setActiveNavMobile} />
+                activeNav={setActiveNavMobile}
+                topic="THỜI SỰ" />
             </NavItem>
             <li className="px-2.5 py-2 border-b border-gray-300 relative line-separate">
               <Link href="/topic/bien-dong-247" >
@@ -80,19 +84,22 @@ export default function NavMobile({ setActiveNavMobile, active }) {
             <NavItem topic="THẾ GIỚI" url="the-gioi" >
               <DropdownMobile
                 menuItems={['Toàn cảnh', 'Tiêu điểm', 'Bình luận', 'Hồ sơ', 'Đọc báo nước ngoài']}
-                activeNav={setActiveNavMobile} />
+                activeNav={setActiveNavMobile}
+                topic="THẾ GIỚI" />
             </NavItem>
             <NavItem topic="NGOẠI GIAO" url="ngoai-giao" >
               <DropdownMobile
                 menuItems={['Tin Bộ Ngoại giao', 'Bảo hộ công dân',
                   'Thường thức Ngoại giao', 'Chuyện ngoại giao']}
-                activeNav={setActiveNavMobile} />
+                activeNav={setActiveNavMobile}
+                topic="NGOẠI GIAO" />
             </NavItem>
             <NavItem topic="KINH TẾ" url="kinh-te" >
               <DropdownMobile
                 menuItems={['Kinh tế thế giới', 'Hội nhập - Phát triển',
                   'Bất động sản', 'Tài chính - Chứng khoán', 'Thương hiệu - Sản phẩm']}
-                activeNav={setActiveNavMobile} />
+                activeNav={setActiveNavMobile}
+                topic="KINH TẾ" />
             </NavItem>
             <li className="px-2.5 py-2 border-b border-gray-300 relative line-separate">
               <Link href="/topic/nguoi-viet" >
@@ -104,12 +111,14 @@ export default function NavMobile({ setActiveNavMobile, active }) {
             <NavItem topic="VĂN HÓA" url="van-hoa" >
               <DropdownMobile
                 menuItems={['Du lịch', 'Sổ tay văn hóa', 'Góc sách']}
-                activeNav={setActiveNavMobile} />
+                activeNav={setActiveNavMobile}
+                topic="VĂN HÓA" />
             </NavItem>
             <NavItem topic="XÃ HỘI" url="xa-hoi" >
               <DropdownMobile
                 menuItems={['Giáo dục', 'Đời sống', 'Y tế', 'Sổ xố hôm nay']}
-                activeNav={setActiveNavMobile} />
+                activeNav={setActiveNavMobile}
+                topic="XÃ HỘI" />
             </NavItem>
             <li className="px-2.5 py-2 border-b border-gray-300 relative line-separate">
               <Link href="/topic/giao-duc" >
@@ -121,7 +130,8 @@ export default function NavMobile({ setActiveNavMobile, active }) {
             <NavItem topic="GIẢI TRÍ" url="giai-tri" >
               <DropdownMobile
                 menuItems={['Hậu trường', 'Chuyện bốn phương', 'Xem - Nghe']}
-                activeNav={setActiveNavMobile} />
+                activeNav={setActiveNavMobile}
+                topic="GIẢI TRÍ"  />
             </NavItem>
             <li className="px-2.5 py-2 border-b border-gray-300 relative line-separate">
               <Link href="/topic/the-thao" >
@@ -158,13 +168,13 @@ export default function NavMobile({ setActiveNavMobile, active }) {
             </a>
           </Link>
           <Link href="/topic/chu-de" >
-            <a className="flex flex-col items-center">
+            <a className="flex flex-col items-center" onClick={()=>setTopicState("CHỦ ĐỀ")} >
               <ExtensionIcon />
               <div>Chủ đề</div>
             </a>
           </Link>
           <Link href="/topic/news" >
-            <a className="flex flex-col items-center">
+            <a className="flex flex-col items-center" onClick={()=>setTopicState("CHỦ ĐỀ / Tin mới")} >
               <NotificationsIcon className="text-red-600" />
               <div>Tin mới</div>
             </a>

@@ -9,13 +9,18 @@ import { theThao } from "../Data/TheThao"
 import { thoiSu } from "../Data/ThoiSu"
 import { xaHoi } from "../Data/XaHoi"
 import Link from "next/link"
+import { NewsContext } from "../Context/NewsContext"
+import { useContext } from "react"
 export default function CategoryLeft() {
+
+    const { topicState, setTopicState } = useContext(NewsContext)
 
     function Topic({ content }) {
         return (
             <div className="mb-4">
                 <Link href={`/topic/${content.header.replace("/","")}`} >
-                    <a className="hover:text-blue-700 text-2xl border-b border-red-600 ">
+                    <a className="hover:text-blue-700 text-2xl border-b border-red-600 "
+                        onClick={()=>setTopicState(content.header.toUpperCase())}>
                         {content.header}
                     </a>
                 </Link>

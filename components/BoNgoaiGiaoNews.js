@@ -1,14 +1,19 @@
 import { boNgoaiGiaoNews } from "../Data/boNgoaiGiaoNews"
 import Image from "next/image"
 import Link from "next/link"
+import { NewsContext } from "../Context/NewsContext"
+import { useContext } from "react"
 export default function BoNgoaiGiaoNews() {
+
+    const { topicState, setTopicState } = useContext(NewsContext)
 
     return (
         <div
             // style={{width:"300px"}} 
             className="mt-3">
             <Link href="/topic/tin-bo-ngoai-giao" >
-                <a className="hover:text-blue-700 text-2xl border-b border-red-600 ">
+                <a  className="hover:text-blue-700 text-2xl border-b border-red-600 " 
+                    onClick={()=>setTopicState("NGOẠI GIAO / Tin Bộ Ngoại giao ")} >
                     Tin Bộ Ngoại giao
                 </a>
             </Link>

@@ -17,8 +17,8 @@ import React, { useContext } from 'react';
 import { NewsContext } from '../../Context/NewsContext';
 export default function Post() {
 
-    const { router } = useContext(NewsContext);
-    console.log(router)
+    const {topicState, setTopicState} = useContext(NewsContext);
+    // console.log(router)
     const dateObj = new Date();
     const month = dateObj.getMonth() + 1;
     const day = String(dateObj.getDate()).padStart(2, '0');
@@ -192,8 +192,9 @@ export default function Post() {
                 </div>
                 <div className='col-span-2' >
                     <div className='mb-3' >
-                        <Link href={`/topic/doc-them`} >
-                            <a className="hover:text-blue-700 text-2xl border-b border-red-600 ">
+                        <Link href={`/topic/xem-nhieu`} >
+                            <a className="hover:text-blue-700 text-2xl border-b border-red-600 "
+                            onClick={()=>setTopicState("CHỦ ĐỀ / Xem nhiều")} >
                                 Xem nhiều
                             </a>
                         </Link>
@@ -209,7 +210,8 @@ export default function Post() {
                     </div>
                     <div>
                         <Link href={`/topic/doc-them`} >
-                            <a className="hover:text-blue-700 text-2xl border-b border-red-600 ">
+                            <a className="hover:text-blue-700 text-2xl border-b border-red-600 "
+                            onClick={()=>setTopicState("CHỦ ĐỀ")}>
                                 Chủ đề
                             </a>
                         </Link>
@@ -228,7 +230,8 @@ export default function Post() {
             <div className='md:grid grid-cols-2 gap-7 mt-2.5' >
                 <div>
                     <Link href={`/topic/doc-them`} >
-                        <a className="hover:text-blue-700 text-lg font-semibold border-b border-red-600 ">
+                        <a className="hover:text-blue-700 text-lg font-semibold border-b border-red-600 "
+                        onClick={()=>setTopicState("CHỦ ĐỀ / Đọc thêm")}>
                             ĐỌC THÊM
                         </a>
                     </Link>

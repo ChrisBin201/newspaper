@@ -1,5 +1,7 @@
 import { covid } from "../Data/covidData"
 import Link from "next/link";
+import { NewsContext } from "../Context/NewsContext";
+import { useContext } from "react";
 export default function CovidNews(){
     const dayArr = ["Chủ nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"]
     const dateObj = new Date();
@@ -10,6 +12,8 @@ export default function CovidNews(){
 
     const time = `${dateObj.getHours()}:${String(dateObj.getMinutes()).padStart(2, '0')}`;
     const dayOfWeek = dayArr[dateObj.getDay()];
+
+    const { topicState, setTopicState } = useContext(NewsContext)
 
     return(
         <div 
@@ -37,6 +41,7 @@ export default function CovidNews(){
                     <Link href="/topic/covid-news" >
                         <a style={{ backgroundImage: "url('	https://baoquocte.vn/modules/frontend/themes/thegioivietnam/images/pc/ico-topic-covid.svg')" }}
                             className="bg-no-repeat pl-6 underline text-sm text-blue-700"
+                            onClick={() =>setTopicState("CHỦ ĐỀ / Tin Covid-19")}
                            >
                             Tin Covid-19 mới nhất
                         </a>

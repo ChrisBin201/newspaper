@@ -1,35 +1,40 @@
 import Image from "next/image"
 import { MultimediaNews } from "../Data/MultimediaNews"
-import React from "react"
+import React, { useContext } from "react"
 import Link from "next/link"
+import { NewsContext } from "../Context/NewsContext"
 export default function Multimedia() {
 
+    const { topicState, setTopicState } = useContext(NewsContext)
+
     return (
-        <div className="p-3.5 bg-gray-100 text-sm">
+        <div className="p-3.5 bg-gray-100 ">
             <div className="flex justify-between py-3">
                 <div >
-                    <Link href="/topic/multimedia" >
-                        <a className="hover:text-blue-700 text-2xl border-b border-red-600 mr-2">
-                            Multimedia
-                        </a>
-                    </Link>
+                    <span className=" text-2xl border-b border-red-600 mr-2">
+                        Multimedia
+                    </span>
                     <Link href="/topic/anh" >
-                        <a className=" hidden md:inline mx-2 hover:text-blue-700" >
+                        <a className=" hidden md:inline mx-2 hover:text-blue-700" 
+                           onClick={()=>setTopicState("Tin ảnh")} >
                             Ảnh
                         </a>
                     </Link>
                     <Link href="/topic/infographic" >
-                        <a className="hidden md:inline mx-2 hover:text-blue-700" >
+                        <a  className="hidden md:inline mx-2 hover:text-blue-700" 
+                            onClick={()=>setTopicState("Infographic")}>
                             Infographic
                         </a>
                     </Link>
                     <Link href="/topic/video" >
-                        <a className="hidden md:inline mx-2 hover:text-blue-700" >
+                        <a  className="hidden md:inline mx-2 hover:text-blue-700"
+                            onClick={()=>setTopicState("Video")} >
                             Video
                         </a>
                     </Link>
                     <Link href="/topic/emagazine" >
-                        <a className="hidden md:inline mx-2 hover:text-blue-700" >
+                        <a  className="hidden md:inline mx-2 hover:text-blue-700"
+                            onClick={()=>setTopicState("Emagazine")} >
                             Emagazine
                         </a>
                     </Link>
@@ -65,7 +70,7 @@ export default function Multimedia() {
                                     </article>
                                     <article className="lg:hidden mb-3" >
                                         <Link href={`/post/multimedia-id-${index}`}  >
-                                            <a  className="flex pr-4" >
+                                            <a className="flex pr-4" >
                                                 <div>
                                                     <Image src={item.img} width={264} height={149} />
                                                 </div>

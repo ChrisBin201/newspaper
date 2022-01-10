@@ -6,14 +6,19 @@ import { gocNhinNhanQuyen } from "../Data/GocNhinNhanQuyen"
 import { nguoiViet } from "../Data/NguoiViet"
 import { hoSo } from "../Data/HoSo"
 import Link from "next/link"
+import { NewsContext } from "../Context/NewsContext"
+import { useContext } from "react"
 // import Topic from "./Topic"
 export default function CategoryCenter() {
+
+    const { topicState, setTopicState } = useContext(NewsContext)
 
     function Topic({ content }) {
         return (
             <div className="mb-4" >
                 <Link href={`/topic/${content.header.replace("/","")}`} >
-                    <a className="hover:text-blue-700 text-2xl border-b border-red-600 ">
+                    <a className="hover:text-blue-700 text-2xl border-b border-red-600 "
+                        onClick={()=>setTopicState(content.header.toUpperCase())}>
                         {content.header}
                         </a>
                 </Link>
